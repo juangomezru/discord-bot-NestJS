@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/counter/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/counter/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/counter",
+  "projects": {
+    "counter": {
+      "type": "application",
+      "root": "apps/counter",
+      "entryFile": "main",
+      "sourceRoot": "apps/counter/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/counter/tsconfig.app.json"
+      }
+    },
+    "discordbot": {
+      "type": "application",
+      "root": "apps/discordbot",
+      "entryFile": "main",
+      "sourceRoot": "apps/discordbot/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/discordbot/tsconfig.app.json"
+      }
+    }
+  }
+}
