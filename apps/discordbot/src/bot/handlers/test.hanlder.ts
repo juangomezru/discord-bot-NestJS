@@ -10,9 +10,9 @@ export class TestHandler extends BaseHandler {
     super();
   }
 
-  async process(): Promise<string> {
+  async process(message): Promise<string> {
     const counter = await firstValueFrom(
-      this.client.send<number>('men', 'test'),
+      this.client.send<number>('men', message),
     );
     console.log('Counter value:', counter);
     return counter.toString();
